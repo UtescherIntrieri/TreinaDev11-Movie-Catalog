@@ -1,0 +1,5 @@
+<h1>Catálogo de Filmes</h1>
+
+<% @movies.each do |movie| %>
+<%= link_to "#{movie.title} - #{movie.year }", movie %> <br>
+<% end %>

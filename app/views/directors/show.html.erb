@@ -1,0 +1,11 @@
+<h1><%= @director.name %> </h1>
+
+<%= link_to 'Editar', edit_director_path %> <br>
+
+<h2>Filmes</h2>
+
+<% @movies.each do |movie| %>
+  <% if movie.director.name == @director.name %>
+    <%= link_to movie.title, movie %> <br>
+  <% end %>
+<% end %>

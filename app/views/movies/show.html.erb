@@ -1,0 +1,32 @@
+<h1>Informações sobre o filme <%= @movie.title %> </h1>
+
+<%= link_to 'Editar', edit_movie_path %> <br>
+
+<dl>
+  <dt>
+    <strong>Título: </strong><%= @movie.title %>
+  </dt>
+  <dd>
+    <strong>Ano de lançamento: </strong><%= @movie.year %>
+  </dd>
+  <dd>
+    <strong>Sinopse: </strong><%= @movie.synopsis %>
+  </dd>
+  <dd>
+    <strong>Duração: </strong><%= @movie.duration %>
+  </dd>
+  <dd>
+    <strong>Gênero: </strong><%= @movie.genre.name if @movie.genre%>
+  </dd>
+  <dd>
+    <strong>Diretor: </strong><%= @movie.director.name if @movie.director %>
+  </dd>
+  <dd>
+    <strong>País: </strong><%= @movie.country %>
+  </dd>
+  <dd>
+    <strong>Status: </strong><%= @movie.status %>
+  </dd>
+</dl>
+
+<%= button_to 'Alterar Status', release_movie_path, { method: 'patch' } %>

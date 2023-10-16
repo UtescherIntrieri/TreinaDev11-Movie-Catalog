@@ -1,0 +1,16 @@
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_with model: @genre do |f| %>
+<div>
+<%= f.label :name, 'Nome' %>
+<%= f.text_field :name %>
+</div>
+
+<div>
+  <%= f.submit 'Salvar' %>
+</div>
+<% end %>

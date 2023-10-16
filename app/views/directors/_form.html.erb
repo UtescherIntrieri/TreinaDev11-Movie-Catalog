@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_with model: @director do |f|%>
+<%= f.label 'Nome'%>
+<%= f.text_field :name %>
+
+<%= f.label 'Nacionalidade'%>
+<%= f.text_field :nationality %>
+
+<%= f.label 'Data de Nascimento'%>
+<%= f.date_field :dob %>
+
+<%= f.label 'Gênero Favorito'%>
+<%= f.collection_select :genre_id, Genre.all, :id, :name %>
+
+<%= f.submit 'Salvar' %>
+<% end %>

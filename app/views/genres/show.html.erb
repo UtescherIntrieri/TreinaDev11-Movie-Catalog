@@ -1,0 +1,11 @@
+<h1><%= @genre.name %> </h1>
+
+<%= link_to 'Editar', edit_genre_path %> <br>
+
+<h2>Filmes</h2>
+
+<% @movies.each do |movie| %>
+  <% if movie.genre.name == @genre.name %>
+    <%= link_to movie.title, movie %> <br>
+  <% end %>
+<% end %>

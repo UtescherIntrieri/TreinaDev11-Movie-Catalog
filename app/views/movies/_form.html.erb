@@ -1,0 +1,30 @@
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= form_with model: @movie do |f|%>
+<%= f.label 'Título'%>
+<%= f.text_field :title %>
+
+<%= f.label 'Nacionalidade'%>
+<%= f.text_field :country %>
+
+<%= f.label 'Sinopse'%>
+<%= f.text_area :synopsis %>
+
+<%= f.label 'Ano de lançamento'%>
+<%= f.number_field :year %>
+
+<%= f.label 'Duração'%>
+<%= f.number_field :duration %>
+
+<%= f.label 'Gênero'%>
+<%= f.collection_select :genre_id, Genre.all, :id, :name %>
+
+<%= f.label 'Diretor'%>
+<%= f.collection_select :director_id, Director.all, :id, :name %>
+
+<%= f.submit 'Salvar' %>
+<% end %>

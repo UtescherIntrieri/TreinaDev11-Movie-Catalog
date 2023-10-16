@@ -11,6 +11,28 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to 'Home', root_path %>
+        </li>
+        <li>
+          <%= link_to 'Cadastrar novo filme', new_movie_path %>
+        </li>
+        <li>
+          <%= link_to 'Cadastrar novo gênero', new_genre_path %>
+        </li>
+        <li>
+          <%= link_to 'Cadastrar novo diretor', new_director_path %>
+        </li>
+        <li>
+          <%= link_to 'Listar gêneros', '/genres' %>
+        </li>
+        <li>
+          <%= link_to 'Listar diretores', '/directors' %>
+        </li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
